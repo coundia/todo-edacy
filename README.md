@@ -25,4 +25,24 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# todo-edacy
+
+# Structure du code
+
+<pre>
+.
+├── src                         # Dossiers des sources Service ,Entity et Extensions Twig
+│   ├── app                     # Dossiers contenants les modules 
+│   │    ├── shared             # module contenant les composants partages
+│   │    ├── core               # module contenant les composants de bases
+│   │    ├── backoffice         # module contenant les composants de back office
+│   │    └── frontoffice        # module contenant les composants de front office
+│   └── environments            # Dossiers contenants les configurations de environnements 
+│   ├── assets                  # Dossiers contenants les fichiers statics
+│   └── environments            # Dossiers contenants les configurations de environnements 
+├── package.json                # Fichier contenant les dépendances  du projet
+├── HELP.md                     # Fichier contenant  le guide pour les développeurs
+├── README.md                   # Fichier contenant la documentation du projet
+└── README.md                   # Fichier contenant la documentation du projet
+</pre>
+
+
