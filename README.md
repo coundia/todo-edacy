@@ -30,7 +30,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 <pre>
 .
-├── src                         # Dossiers des sources Service ,Entity et Extensions Twig
+├── src                         # Dossiers des sources 
 │   ├── app                     # Dossiers contenants les modules 
 │   │    ├── shared             # module contenant les composants partages
 │   │    ├── core               # module contenant les composants de bases
