@@ -16,37 +16,35 @@ export class TodoComponent implements OnInit {
   constructor(private taskService: TaskService, private router: Router) {
 
   }
-
   title = "TODO";
-  taskTitle = "";
-  taskStatus = "";
-  statusSelected = "";
-  lastIndex = 0;
+  task=new Task() ;
 
+  /**
+   * delete a task
+   * @param taskId
+   */
   deleteTask(taskId: number) {
-    // const taskIndex = this.tasks?.findIndex((task) => task.id === taskId);
     this.taskService.deleteTask(taskId).pipe(
       tap(() => {
-        this.router.navigateByUrl("/todo");
-      })
-    ).subscribe();
-  }
-
-  addTask() {
-    // const lastIndex = this.tasks.length - 1;
-    const id = Math.random();
-    /**
-     * this.tasks.push({title: this.taskTitle, id, status: this.taskStatus, description: ""});
-     * this.taskTitle = "";
-     */
-    this.taskService.addTask({title: this.taskTitle, id, status: this.taskStatus, description: ""}).pipe(
-      tap(() => {
-        this.router.navigateByUrl("/todo");
+        this.getAllTask();
       })
     ).subscribe();
   }
 
   /**
+   *  Add a task
+   */
+  addTask() {
+    this.taskService.addTask(this.task).pipe(
+      tap(() => {
+        this.getAllTask();
+        // this.router.navigateByUrl("/todo");
+      })
+    ).subscribe();
+  }
+
+  /**
+   * get al task
    * filterTask()
    */
   getAllTask() {
@@ -54,12 +52,16 @@ export class TodoComponent implements OnInit {
   }
 
   /**
-   * ngOnit
+   * init funct
    */
   ngOnInit(): void {
     this.getAllTask();
   }
 
+  /**
+   * filtrer par stats
+   * @param status
+   */
   filterTask(status: string) {
     this.tasks$ = this.taskService.getTaskByStatus(status);
   }

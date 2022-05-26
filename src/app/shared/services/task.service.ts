@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {Task} from "../models/task.model";
+import {map, switchMap} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -35,15 +36,6 @@ export class TaskService {
     return this.http.get<Task[]>(`http://localhost:3000/tasks?status=${status}`);
   }
 
-  /**
-   *
-   * @param task
-   */
-  addTask(task: { description: string; id: number; title: string; status: string }) {
-    console.log("addTask()");
-    console.log(task);
-    return this.http.post<Task>("http://localhost:3000/tasks", {task});
-  }
 
   /**
    *
@@ -52,5 +44,26 @@ export class TaskService {
   deleteTask(taskId: number) {
     console.log("getTaskById()");
     return this.http.delete<Task>(`http://localhost:3000/tasks/${taskId}`);
+  }
+
+  /**
+   *
+   * @param formTask
+   */
+  addTask(formTask: Task) {
+    console.log("addTask()");
+    console.log(formTask);
+    return this.getTasks().pipe(
+      map(task => [...task].sort((a,b) => a.id - b.id)),
+      map(sortedTask => sortedTask[sortedTask.length - 1]),
+      map(previousTask => ({
+        ...formTask,
+        id: previousTask.id + 1
+      })),
+      switchMap(newTask => this.http.post<Task>(
+        'http://localhost:3000/tasks',
+        newTask)
+      )
+    );
   }
 }
