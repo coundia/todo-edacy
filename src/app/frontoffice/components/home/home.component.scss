@@ -9,3 +9,12 @@ form {
   }
 }
 
+/** GRID home */
+@media (min-width: 990px) {
+  .grid-box{
+    display: grid;
+    grid-template: 900px / 0.3fr 1fr;
+    gap : 20px 20px
+  }
+
+}
