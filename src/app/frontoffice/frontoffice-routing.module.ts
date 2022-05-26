@@ -1,9 +1,10 @@
-import {Component, NgModule} from '@angular/core';
+import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from "@angular/router";
 import {DetailsComponent} from "./components/details/details.component";
 import {TodoComponent} from "./components/todo/todo.component";
 import {ProfileComponent} from "./components/profile/profile.component";
 import {ChatComponent} from "./components/chat/chat.component";
+
 const routes: Routes = [
   { path: 'chat', component: ChatComponent  },
   { path: 'profile', component: ProfileComponent  },
