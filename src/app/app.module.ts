@@ -14,7 +14,6 @@ import {FrontOfficeRoutingModule} from "./frontoffice/frontoffice-routing.module
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FrontOfficeRoutingModule,
     FrontofficeModule,
     SharedModule
   ],

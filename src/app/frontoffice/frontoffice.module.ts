@@ -6,6 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { TodoComponent } from './components/todo/todo.component';
 import {FormsModule} from "@angular/forms";
+import {FrontOfficeRoutingModule} from "./frontoffice-routing.module";
 
 
 
@@ -26,7 +27,8 @@ import {FormsModule} from "@angular/forms";
   ],
     imports: [
         CommonModule,
-        FormsModule
+        FormsModule,
+      FrontOfficeRoutingModule
     ]
 })
 export class FrontofficeModule { }
