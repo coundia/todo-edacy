@@ -27,6 +27,7 @@ export class TaskService {
     console.log("getTaskById()");
     return this.http.get<Task>(`http://localhost:3000/tasks/${taskId}`);
   }
+
   /**
    * get all task status
    * @param status
@@ -54,7 +55,7 @@ export class TaskService {
     console.log("addTask()");
     console.log(formTask);
     return this.getTasks().pipe(
-      map(task => [...task].sort((a,b) => a.id - b.id)),
+      map(task => [...task].sort((a, b) => a.id - b.id)),
       map(sortedTask => sortedTask[sortedTask.length - 1]),
       map(previousTask => ({
         ...formTask,

@@ -24,11 +24,12 @@ import {FrontOfficeRoutingModule} from "./frontoffice-routing.module";
     ProfileComponent,
     TodoComponent
   ],
-    imports: [
-        CommonModule,
-        FormsModule,
-        FrontOfficeRoutingModule,
-        ReactiveFormsModule
-    ]
+  imports: [
+    CommonModule,
+    FormsModule,
+    FrontOfficeRoutingModule,
+    ReactiveFormsModule
+  ]
 })
-export class FrontofficeModule { }
+export class FrontofficeModule {
+}

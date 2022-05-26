@@ -12,12 +12,12 @@ import {Router} from "@angular/router";
 })
 export class TodoComponent implements OnInit {
   tasks$!: Observable<Task[]>;
+  title = "TODO";
+  task = new Task();
 
   constructor(private taskService: TaskService, private router: Router) {
 
   }
-  title = "TODO";
-  task=new Task() ;
 
   /**
    * delete a task
@@ -48,7 +48,7 @@ export class TodoComponent implements OnInit {
    * filterTask()
    */
   getAllTask() {
-       this.tasks$ = this.taskService.getTasks();
+    this.tasks$ = this.taskService.getTasks();
   }
 
   /**

@@ -3,38 +3,40 @@ import {Router} from "@angular/router";
 
 
 @Injectable({
-    providedIn : "root"
+    providedIn: "root"
   }
 )
-export class AuthService{
+export class AuthService {
   private token = '';
 
-  constructor(private router : Router){}
+  constructor(private router: Router) {
+  }
 
 
-  getToken() :string {
+  getToken(): string {
     return this.token;
   }
-  setToken(token:string) :void{
+
+  setToken(token: string): void {
     //localStorage.setItem('token',token)
-    this.token=token;
+    this.token = token;
   }
 
-  login(data: { email: string,password: string}):boolean {
+  login(data: { email: string, password: string }): boolean {
     console.log("data arrived")
     console.log(data)
-    if (data.email == 'papacoundia@gmail.com' && data.password == 'passer'){
-      this.token= btoa(data.email+":"+data.password);//reverse by atob
+    if (data.email == 'papacoundia@gmail.com' && data.password == 'passer') {
+      this.token = btoa(data.email + ":" + data.password);//reverse by atob
       this.setToken(this.token);
       return true;
-    }else{
-      this.token="";
+    } else {
+      this.token = "";
       return false
     }
   }
 
   onLogout() {
-    this.token="";
+    this.token = "";
     this.router.navigateByUrl("/");
 
   }

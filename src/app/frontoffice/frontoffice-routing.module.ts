@@ -6,11 +6,11 @@ import {ProfileComponent} from "./components/profile/profile.component";
 import {ChatComponent} from "./components/chat/chat.component";
 
 const routes: Routes = [
-  { path: 'chat', component: ChatComponent  },
-  { path: 'profile', component: ProfileComponent  },
-  { path: 'todo/:id', component: DetailsComponent  },
-  { path: 'todo', component: TodoComponent  },
-  { path: '', component: TodoComponent  }
+  {path: 'chat', component: ChatComponent},
+  {path: 'profile', component: ProfileComponent},
+  {path: 'todo/:id', component: DetailsComponent},
+  {path: 'todo', component: TodoComponent},
+  {path: '', component: TodoComponent}
 ];
 
 @NgModule(
@@ -24,6 +24,6 @@ const routes: Routes = [
     ],
   }
 )
-export class FrontOfficeRoutingModule{
+export class FrontOfficeRoutingModule {
 
 }

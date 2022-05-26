@@ -7,10 +7,10 @@ import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
-    declarations: [
-        HeaderComponent,
-        FooterComponent
-    ],
+  declarations: [
+    HeaderComponent,
+    FooterComponent
+  ],
   exports: [
     HeaderComponent,
     FooterComponent
@@ -21,4 +21,5 @@ import {HttpClientModule} from "@angular/common/http";
     RouterModule
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+}

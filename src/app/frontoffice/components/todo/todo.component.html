@@ -1,37 +1,37 @@
 <div class="grid-todo">
   <h1>{{ title }}</h1>
-<!--  form add task-->
-  <form class="col-sm-3 mb-4" >
+  <!--  form add task-->
+  <form class="col-sm-3 mb-4">
     <div class="form-group">
       <div class="label">Nom de la tache</div>
-      <input type="text"   name="title" [(ngModel)]="task.title" class="form-control">
+      <input [(ngModel)]="task.title" class="form-control" name="title" type="text">
     </div>
     <div class="form-group">
       <div class="label">Statut</div>
-      <select name="status"  [(ngModel)]="task.status"  class="form-control"  >
+      <select [(ngModel)]="task.status" class="form-control" name="status">
         <option [value]="'TODO'">A faire</option>
         <option [value]="'PROGRESS'">En cours</option>
         <option [value]="'DONE'">Termine</option>
       </select>
     </div>
     <div class="form-group">
-      <button type="button" (click)="addTask()" class="btn btn-success">AJOUTER</button>
+      <button (click)="addTask()" class="btn btn-success" type="button">AJOUTER</button>
     </div>
   </form>
   <!--  end form add task-->
-<!--  list des taches-->
+  <!--  list des taches-->
   <div class="row filters">
     <div class="col-sm-3">
-      <button class="btn btn-block btn-danger" (click)="getAllTask()">Tout</button>
+      <button (click)="getAllTask()" class="btn btn-block btn-danger">Tout</button>
     </div>
     <div class="col-sm-3">
-      <button class="btn btn-block btn-primary" (click)="filterTask('TODO')">To Do</button>
+      <button (click)="filterTask('TODO')" class="btn btn-block btn-primary">To Do</button>
     </div>
     <div class="col-sm-3">
-      <button class="btn btn-block btn-warning" (click)="filterTask('PROGRESS')">In Progress</button>
+      <button (click)="filterTask('PROGRESS')" class="btn btn-block btn-warning">In Progress</button>
     </div>
     <div class="col-sm-3">
-      <button class="btn btn-block btn-success" (click)="filterTask('DONE')">Done</button>
+      <button (click)="filterTask('DONE')" class="btn btn-block btn-success">Done</button>
     </div>
   </div>
   <table class="table table-striped">
@@ -48,7 +48,9 @@
       <td>{{task.id}}</td>
       <td>{{ task.title }}</td>
       <td>{{ task.status }}</td>
-      <td><button (click)="deleteTask(task.id)" class="btn btn-danger">Supprimer</button></td>
+      <td>
+        <button (click)="deleteTask(task.id)" class="btn btn-danger">Supprimer</button>
+      </td>
     </tr>
     </tbody>
   </table>

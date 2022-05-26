@@ -10,13 +10,14 @@ import {AuthService} from "../../shared/services/auth.services";
 )
 export class AuthGuard implements CanActivate {
   //const
-  constructor(private authService: AuthService, private router: Router){}
+  constructor(private authService: AuthService, private router: Router) {
+  }
 
 //funct guard
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    if(this.authService.getToken()){
+    if (this.authService.getToken()) {
       return true;
-    }else{
+    } else {
       this.router.navigateByUrl("/auth/login");
       return false;
     }

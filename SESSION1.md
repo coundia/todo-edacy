@@ -1,4 +1,5 @@
-#Angular cli 
+# Angular cli
+
 [https://v12.angular.io/cli/generate](https://v12.angular.io/cli/generate)
 
 ng generate <schematic> [options]
@@ -24,16 +25,10 @@ ng generate <schematic> [options]
 
 **Options**
 
-  --defaults
-  --help
-  --interactive	
-  -m	
+--defaults --help --interactive -m
 
+Examples
 
-Examples 
-
-ng generate component header -m 
-ng generate service task -m shared
-
+ng generate component header -m ng generate service task -m shared
 
 --skip-tests = false par defaults

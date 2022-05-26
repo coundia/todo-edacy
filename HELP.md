@@ -1,7 +1,7 @@
 # Todo app
 
 # Structure du code
-    
+
     <pre>
     .
     ├── src                         # Dossiers des sources Service ,Entity et Extensions Twig
@@ -19,7 +19,7 @@
     └── README.md                   # Fichier contenant la documentation du projet
     </pre>
 
-# Creation des components 
+# Creation des components
 
     ng new todo-edacy
     ng g c shared/components/header
@@ -31,12 +31,12 @@
     ng g c frontoffice/components/profile
     ng g c frontoffice/components/todo
 
-# Creation des services 
- 
+# Creation des services
+
     ng generate service shared/services/task 
     ng generate service shared/services/chat 
 
-# JSON SERVER 
+# JSON SERVER
 
 [https://www.npmjs.com/package/json-server](https://www.npmjs.com/package/json-server)
 

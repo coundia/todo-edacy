@@ -8,9 +8,9 @@ describe('HeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
+      declarations: [HeaderComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -24,8 +24,8 @@ describe('HeaderComponent', () => {
   });
   /**
    * test if home is Here
-  */
-  it('Check if Home is Here',()=>{
+   */
+  it('Check if Home is Here', () => {
     // const fixture = TestBed.createComponent(HeaderComponent);
     // fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
