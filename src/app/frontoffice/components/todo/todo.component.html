@@ -1,1 +1,52 @@
-<p>todo works!</p>
+<div class="container">
+  <h1>{{ title }}</h1>
+  <form class="col-sm-3">
+    <div class="form-group">
+      <div class="label">Task title</div>
+      <input type="text"   name="title" class="form-control">
+    </div>
+    <div class="form-group">
+      <div class="label">Status</div>
+      <select name="status" class="form-control"  >
+        <option [value]="'To Do'">To Do</option>
+        <option [value]="'In Progress'">In Progress</option>
+        <option [value]="'Done'">Done</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <button type="button" (click)="addTask()" class="btn btn-success">AJOUTER</button>
+    </div>
+  </form>
+  <div class="row filters">
+    <div class="col-sm-3">
+      <button class="btn btn-block btn-default" (click)="statusSelected ='' ">Tout</button>
+    </div>
+    <div class="col-sm-3">
+      <button class="btn btn-block btn-primary" (click)="statusSelected = 'To Do'">To Do</button>
+    </div>
+    <div class="col-sm-3">
+      <button class="btn btn-block btn-warning" (click)="statusSelected = 'In Progress'">In Progress</button>
+    </div>
+    <div class="col-sm-3">
+      <button class="btn btn-block btn-success" (click)="statusSelected = 'Done'">Done</button>
+    </div>
+  </div>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <td>Id</td>
+      <td>Title</td>
+      <td>Status</td>
+      <td>Supprimer</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let task of filterTask()">
+      <td>{{task.id}}</td>
+      <td>{{ task.title }}</td>
+      <td>{{ task.status }}</td>
+      <td><button (click)="deleteTask(task.id)" class="btn btn-danger">Supprimer</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

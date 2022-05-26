@@ -5,6 +5,7 @@ import { DetailsComponent } from './components/details/details.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { TodoComponent } from './components/todo/todo.component';
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -16,8 +17,16 @@ import { TodoComponent } from './components/todo/todo.component';
     ProfileComponent,
     TodoComponent
   ],
-  imports: [
-    CommonModule
-  ]
+  exports: [
+    ChatComponent,
+    DetailsComponent,
+    HomeComponent,
+    ProfileComponent,
+    TodoComponent
+  ],
+    imports: [
+        CommonModule,
+        FormsModule
+    ]
 })
 export class FrontofficeModule { }
