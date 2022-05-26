@@ -1,6 +1,6 @@
 export class Task {
-  id!: number;
-  title!: string;
-  description!: string;
-  status!: string;
+  public  id!: number;
+  public title!: string;
+  public status!: string;
+  public  description!: string;
 }

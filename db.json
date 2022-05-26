@@ -4,7 +4,19 @@
       "id": 1,
       "title": "Faire les tests unitaires ",
       "description": "Faire tous  les tests unitaires ",
-      "status": "IN_PROGESS"
+      "status": "TODO"
+    },
+    {
+      "id": 2,
+      "title": "Task 2 ",
+      "description": "Faire encore des tests 2 ",
+      "status": "PROGRESS"
+    },
+    {
+      "id": 2,
+      "title": "Task 3 ",
+      "description": "Faire encore des tests 3 ",
+      "status": "DONE"
     }
   ]
 }
