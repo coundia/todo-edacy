@@ -50,3 +50,7 @@
 
     
 
+# Creation de Pipe
+
+    ng generate pipe relativeTime
+    ng generate pipe pluralize

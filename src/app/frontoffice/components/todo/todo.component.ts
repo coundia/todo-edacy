@@ -35,6 +35,7 @@ export class TodoComponent implements OnInit {
    *  Add a task
    */
   addTask() {
+
     this.taskService.addTask(this.task).pipe(
       tap(() => {
         this.getAllTask();

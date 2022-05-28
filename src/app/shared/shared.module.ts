@@ -4,21 +4,31 @@ import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {RouterModule} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
+import { RelativeTimePipe } from './pipes/relative-time.pipe';
+import { PluralizePipe } from './pipes/pluralize.pipe';
+import {TranslateModule} from "@ngx-translate/core";
+
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    RelativeTimePipe,
+    PluralizePipe
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    RelativeTimePipe,
+    PluralizePipe
   ],
   imports: [
     CommonModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    TranslateModule.forRoot()
+
   ]
 })
 export class SharedModule {

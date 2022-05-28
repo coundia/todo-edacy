@@ -54,6 +54,7 @@ export class TaskService {
   addTask(formTask: Task) {
     console.log("addTask()");
     console.log(formTask);
+
     return this.getTasks().pipe(
       map(task => [...task].sort((a, b) => a.id - b.id)),
       map(sortedTask => sortedTask[sortedTask.length - 1]),
